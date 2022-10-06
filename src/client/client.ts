@@ -11,15 +11,16 @@ const camera = new THREE.PerspectiveCamera(
 )
 camera.position.z = 2
 
-const renderer = new THREE.WebGLRenderer()
+const canvas = document.getElementById("c1") as HTMLCanvasElement;
+const renderer = new THREE.WebGLRenderer({ canvas: canvas })
 renderer.setSize(window.innerWidth, window.innerHeight)
-document.body.appendChild(renderer.domElement)
+// document.body.appendChild(renderer.domElement)
 
 new OrbitControls(camera, renderer.domElement)
 
 const geometry = new THREE.BoxGeometry()
 const material = new THREE.MeshBasicMaterial({
-    color: 0xff0000,
+    color: 0x00ff00,
     wireframe: true,
 })
 
